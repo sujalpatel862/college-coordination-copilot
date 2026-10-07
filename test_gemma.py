@@ -5,7 +5,7 @@ Run with:  python test_gemma.py
 
 import sys
 
-from config import MODEL_NAME, GEMINI_API_KEY
+from config import MODEL_NAME, get_api_key, validate_api_key
 from ai_service import analyze_conversation
 
 SAMPLE_CONVERSATION = """Rahul: I'll make the PPT tonight.
@@ -16,7 +16,7 @@ Rahul: Actually I can't finish tonight. I'll do it tomorrow morning."""
 
 
 def main():
-    if not GEMINI_API_KEY:
+    if not validate_api_key(exit_on_failure=False):
         print("FAIL: GEMINI_API_KEY is not set.")
         sys.exit(1)
 
