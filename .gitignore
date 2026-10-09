@@ -3,3 +3,17 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Next.js application
+web/node_modules/
+web/.next/
+web/out/
+
+# Environment variables and secrets
+.env*
+!.env.example
+web/.env*
+!web/.env.example
+
+# Generated TypeScript files
+web/next-env.d.ts
